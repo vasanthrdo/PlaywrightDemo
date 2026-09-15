@@ -11,6 +11,8 @@ test('drag and drop', async({page})=>{
     await sourceElement.dragTo(TragetElement);
     await page.waitForTimeout(10000);
 
+    
+
 
 
 })
