@@ -4,7 +4,10 @@
 //Step 4: Aserting the results
 // @ts-check
 
-const{test,expect} = require('@playwright/test');
+//const{test,expect} = require('@playwright/test');
+
+import{test,expect} from '@playwright/test';
+
 test('basic auth tech', async({page})=>{
 //Step 1
 const username = 'admin';
@@ -21,7 +24,7 @@ await page.route('**/*',(route)=>{
 
 await page.goto('https://the-internet.herokuapp.com/basic_auth');
 console.log(await page.locator('div[class="example"] p').getByLabel('Congratulations! You must have the proper credentials.'));
-await page.waitForTimeout(10000);
+await page.waitForTimeout(1000);
 
 
 
