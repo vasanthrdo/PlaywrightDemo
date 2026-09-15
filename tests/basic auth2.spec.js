@@ -24,7 +24,7 @@ await page.route('**/*',(route)=>{
 
 await page.goto('https://the-internet.herokuapp.com/basic_auth');
 console.log(await page.locator('div[class="example"] p').getByLabel('Congratulations! You must have the proper credentials.'));
-await page.waitForTimeout(10000);
+await page.waitForTimeout(1000);
 
 
 
