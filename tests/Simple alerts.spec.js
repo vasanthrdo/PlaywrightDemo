@@ -1,18 +1,18 @@
 //tc@check
 
 const{test,expect} = require('@playwright/test');
-test.skip('Simple alerts',async({page})=>{
+test('Simple alerts',async({page})=>{
 
     await page.goto('https://chercher.tech/practice/practice-pop-ups-selenium-webdriver');
 
-    await page.on('dialog', async(a)=>{         // asking to trigger a event which is a dialog & introducting a async variable & call by fucntion
-    console.log(await a.message());             // code: on the popup we need to trigger a event to see the text then only on the below code we are clicking
-    a.accept();                                // to click ok in the dialog box
+    await page.on('dialog', async(a)=>{  // asking to trigger a event which is a dialog & introducting a async variable & call by fucntion
+    console.log(await a.message());      // code: on the popup we need to trigger a event to see the text then only on the below code we are clicking
+    a.accept();                          // to click ok in the dialog box
 
     })
-
+    
     await page.locator('css=input[value="Alert"]').click();    //playwright will automatically handle the popup means it will close automatically
-    await page.waitForTimeout(1000);
+    //await page.waitForTimeout(1000);
 
 })
 
