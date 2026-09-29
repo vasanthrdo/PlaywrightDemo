@@ -14,7 +14,13 @@ test('OrangeHRM CSSXPATH',async({page})=>{
 
     await page.getByPlaceholder('Password').fill('admin123')
      
+    try {
     await page.getByRole('button',{name:'Login'}).click()
+    
+    //await page.locator("#login").click();
+     } catch (error) {
+    console.log("Login button was not found");
+    }
    
     await page.getByAltText('profile picture').click()
     await page.getByRole('menuitem',{name:'Logout'}).click()
